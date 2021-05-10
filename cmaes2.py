@@ -73,7 +73,7 @@ import cma
 fmin = cma.fmin2
 
 suite_name = "bbob"  # see cocoex.known_suite_names
-budget_multiplier = 10e5  # times dimension, increase to 10, 100, ...
+budget_multiplier = 1e5  # times dimension, increase to 10, 100, ...
 suite_filter_options = ("dimensions: 20 function_indices: {}".format(sys.argv[1]))
 # for more suite filter options see http://numbbo.github.io/coco-doc/C/#suite-parameters
 batches = 1  # number of batches, batch=3/32 works to set both, current_batch and batches
