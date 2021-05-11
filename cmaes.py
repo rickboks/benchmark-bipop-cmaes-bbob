@@ -1,41 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""A short and simple example experiment with restarts.
-
-The script is fully functional but also emphasises on readability. It
-features restarts, timings and recording termination conditions.
-
-To benchmark a different solver, `fmin` must be re-assigned and another
-`elif` block added around line 119 to account for the solver-specific
-call.
-
-When calling the script, previously assigned variables can be re-assigned
-via a ``name=value`` argument without white spaces, where ``value`` is
-interpreted as a single python literal. Additionally, ``batch`` is recognized
-as argument defining the `current_batch` number and the number of `batches`,
-like ``batch=2/8`` runs batch 2 of 8.
-
-Examples, preceeded by "python" in an OS shell and by "run" in an IPython
-shell::
-
-    example_experiment2.py budget_multiplier=3  # times dimension
-
-    example_experiment2.py budget_multiplier=1e4 cocopp=None  # omit post-processing
-    
-    example_experiment2.py budget_multiplier=1e4 suite_name=bbob-biobj
-
-    example_experiment2.py budget_multiplier=1000 batch=1/16
-
-Post-processing with `cocopp` is only invoked in the single-batch case.
-
-Details: ``batch=9/8`` is equivalent to ``batch=1/8``. The first number
-is taken modulo to the second.
-
-See the code: `<https://github.com/numbbo/coco/blob/master/code-experiments/build/python/example_experiment2.py>`_
-
-See a beginners example experiment: `<https://github.com/numbbo/coco/blob/master/code-experiments/build/python/example_experiment_for_beginners.py>`_
-
-"""
 from __future__ import division, print_function, unicode_literals
 __author__ = "Nikolaus Hansen and ..."
 import sys
