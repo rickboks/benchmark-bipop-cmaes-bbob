@@ -62,7 +62,6 @@ instances = ','.join([str(x) for x in range(1,6) for _ in range(20)])
 suite = cocoex.Suite(suite_name, "instances: "+instances, suite_filter_options)
 observer = cocoex.Observer(suite_name, "result_folder: " + output_folder)
 minimal_print = cocoex.utilities.MiniPrint()
-stoppings = defaultdict(list)  # dict of lists, key is the problem index
 timings = defaultdict(list)  # key is the dimension
 
 ### go
@@ -93,7 +92,6 @@ for batch_counter, problem in enumerate(suite):  # this loop may take hours or d
                 'verbose':-9, 
                 'termination_callback' : lambda x : problem.final_target_hit
             }, restarts=9, bipop=True)
-        stoppings[problem.index].append(es.stop())
 
     timings[problem.dimension].append((time.time() - time1) / problem.evaluations
                                       if problem.evaluations else 0)
